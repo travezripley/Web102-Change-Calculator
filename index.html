@@ -1,13 +1,69 @@
+<!--Web102-Change-Calculator - index.html
+  Created by Travis Ripley
+  Started February 25th, 2019. -->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Change Calculator</title>
-  </head>
-  <body>
-    <!-- Write your markup here -->
 
-    <!-- Don't forget to add your <script> tag here -->
+<head>
+  <meta charset="utf-8" />
 
-  </body>
+  <title>Change Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js" charset="utf-8"></script>
+
+  <link
+    href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACSU4sIklOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4sIAAAAAAAAAAAAAAAAklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/AAAAAAAAAAAAAAAAJJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/wAAAAAAAAAAJJTi/wAAAAAAAAAAAAAAACSU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8AAAAAAAAAACSU4v8AAAAAAAAAAAAAAAAklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/AAAAAAAAAAAklOL/AAAAAAAAAAAAAAAAJJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/wAAAAAAAAAAAAAAACSU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8AAAAAAAAAAAAAAAAklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/AAAAAAAAAAAAAAAAJJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/wAAAAAAAAAAAAAAACSU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8AAAAAAAAAAAAAAAAklOL/SsOLDgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDiw8klOL/AAAAAAAAAAAAAAAAJJTi/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJJTi/wAAAAAAAAAAAAAAACSU4v9Kw4sPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOLDySU4v8AAAAAAAAAAAAAAAAklOLCJJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOLCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAIADAAC22wAAttsAAIAbAAC22wAAttsAAIADAAC22wAAttsAAIADAAC/+wAAv/sAAL/7AACAAwAA//8AAA=="
+    rel="icon" type="image/x-icon" />
+
+<body>
+  <div id="page-wrap">
+
+    <div class="headings">
+      <h1>Change Calculator</h1>
+    </div>
+    </head>
+
+
+    <div>
+      <!-- Write your markup here -->
+      <p id="demo"> Amount Due:</p>
+      <input id="amount-due" type="text" placeholder="Amount due" />
+    
+      <br><br>
+      <p id="demo"> Amount Received:</p>
+      <input id="amount-received" type="text" placeholder="Amount received" />
+    
+      <br><br>
+    
+      <button id="calculate-change" onclick=calculateChange()>
+        Calculate Change
+      </button>
+    
+    </div>
+
+    <br><br>
+    <div>
+      <label>Dollars:</label>
+      <p id="dollars-output"></p>
+
+      <label>Quarters:</label>
+      <p id="quarters-output"></p>
+
+      <label>Dimes:</label>
+      <p id="dimes-output"></p>
+
+      <label>Nickles:</label>
+      <p id="nickels-output"></p>
+
+      <label>Pennies:</label>
+      <p id="pennies-output"></p>
+
+      <label>Total:</label>
+      <p id="total"></p>
+
+    </div>
+  </div>
+</body>
+
 </html>
