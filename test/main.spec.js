@@ -24,7 +24,7 @@ describe('Change Calculator', function () {
       pageObject = Nightmare().goto(url);
     })
 
-    it('should have a H1 with the text "Change Calculator"', () =>
+    it('should have a h1 with the text "Change Calculator"', () =>
       pageObject
         .evaluate(() => document.querySelector('h1').innerText)
         .then(heading => expect(heading).to.equal('Change Calculator'))

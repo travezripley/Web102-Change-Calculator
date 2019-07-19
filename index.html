@@ -1,69 +1,105 @@
-<!--Web102-Change-Calculator - index.html
-  Created by Travis Ripley
-  Started February 25th, 2019. -->
-
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>The Change Calculator</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"
+    />
+    <link rel="stylesheet" href="/src/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
+  <body>
+    <h3 class="title is-pulled-left">
+      <i class="fas fa-coins has-text-success">&nbsp; </i>
+    </h3>
+    <h3 class="title is-pulled-right">
+      <i class="fas fa-coins has-text-success">&nbsp; </i>
+    </h3>
+    <h1 class="title has-text-success">Change Calculator</h1>
+    <hr class="has-background-success" />
 
-  <title>Change Calculator</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="main.js" charset="utf-8"></script>
+    <section>
+      <h4 class="title is-4">Transaction</h4>
+      <div class="columns ">
+        <div class="column is-two-fifth">
+          <label for="amount-due"
+            >How much is the amount due from the sale?</label
+          >
+          <input
+            type="number"
+            id="amount-due"
+            class="input is-rounded"
+            placeholder="$0.00"
+          />
+        </div>
 
-  <link
-    href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACSU4sIklOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4sIAAAAAAAAAAAAAAAAklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/AAAAAAAAAAAAAAAAJJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/wAAAAAAAAAAJJTi/wAAAAAAAAAAAAAAACSU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8AAAAAAAAAACSU4v8AAAAAAAAAAAAAAAAklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/AAAAAAAAAAAklOL/AAAAAAAAAAAAAAAAJJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/wAAAAAAAAAAAAAAACSU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8AAAAAAAAAAAAAAAAklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/JJTiPCSU4jwklOL/AAAAAAAAAAAAAAAAJJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/ySU4jwklOI8JJTi/wAAAAAAAAAAAAAAACSU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8AAAAAAAAAAAAAAAAklOL/SsOLDgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDiw8klOL/AAAAAAAAAAAAAAAAJJTi/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJJTi/wAAAAAAAAAAAAAAACSU4v9Kw4sPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOLDySU4v8AAAAAAAAAAAAAAAAklOLCJJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOL/JJTi/ySU4v8klOLCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAIADAAC22wAAttsAAIAbAAC22wAAttsAAIADAAC22wAAttsAAIADAAC/+wAAv/sAAL/7AACAAwAA//8AAA=="
-    rel="icon" type="image/x-icon" />
+        <div class="column is-two-fifth">
+          <label for="amount-received"
+            >How much has the customer given to you?</label
+          >
+          <input
+            type="number"
+            id="amount-received"
+            class="input is-rounded"
+            placeholder="$0.00"
+          />
+        </div>
 
-<body>
-  <div id="page-wrap">
+        <div class="column is-one-fifth">
+          <button id="calculate-change" class="button is-black is-medium">
+            Calculate
+          </button>
+        </div>
+      </div>
+      <div id="error"></div>
+      <div id="success"></div>
+    </section>
 
-    <div class="headings">
-      <h1>Change Calculator</h1>
-    </div>
-    </head>
+    <section>
+      <h4 class="title is-4">Change Due</h4>
 
+      <div class="columns ">
+        <div class="column is-one-fifth">
+          <p id="dollars-output">0</p>
+          <img src="images/dollars.jpg" id="dollarsimg" width="75" />
+          <label for="dollars-output">Dollars</label>
+        </div>
 
-    <div>
-      <!-- Write your markup here -->
-      <p id="demo"> Amount Due:</p>
-      <input id="amount-due" type="text" placeholder="Amount due" />
-    
-      <br><br>
-      <p id="demo"> Amount Received:</p>
-      <input id="amount-received" type="text" placeholder="Amount received" />
-    
-      <br><br>
-    
-      <button id="calculate-change" onclick=calculateChange()>
-        Calculate Change
-      </button>
-    
-    </div>
+        <div class="column is-one-fifth">
+          <p id="quarters-output">0</p>
+          <img src="images/quarters.jpg" id="quartersimg" width="50" />
+          <label for="quarters-output">Quarters</label>
+        </div>
 
-    <br><br>
-    <div>
-      <label>Dollars:</label>
-      <p id="dollars-output"></p>
+        <div class="column is-one-fifth">
+          <p id="dimes-output">0</p>
+          <img src="images/dimes.jpg" id="dimesimg" width="50" />
+          <label for="dimes-output">Dimes</label>
+        </div>
 
-      <label>Quarters:</label>
-      <p id="quarters-output"></p>
+        <div class="column is-one-fifth">
+          <p id="nickels-output">0</p>
+          <img src="images/nickels.jpg" id="nicklesimg" width="50" />
+          <label for="nickels-output">Nickels</label>
+        </div>
 
-      <label>Dimes:</label>
-      <p id="dimes-output"></p>
+        <div class="column is-one-fifth">
+          <p id="pennies-output">0</p>
+          <img src="images/pennies.jpg" id="penniesimg" width="50" />
+          <label for="pennies-output">Pennies</label>
+        </div>
+      </div>
+    </section>
 
-      <label>Nickles:</label>
-      <p id="nickels-output"></p>
-
-      <label>Pennies:</label>
-      <p id="pennies-output"></p>
-
-      <label>Total:</label>
-      <p id="total"></p>
-
-    </div>
-  </div>
-</body>
-
+    <script src="main.js" charset="utf-8"></script>
+  </body>
 </html>
